@@ -8,9 +8,8 @@ describe('NgQrcodeSvgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgQrcodeSvgComponent ]
-    })
-    .compileComponents();
+      declarations: [NgQrcodeSvgComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NgQrcodeSvgComponent);
     component = fixture.componentInstance;

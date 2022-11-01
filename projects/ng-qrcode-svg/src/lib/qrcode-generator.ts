@@ -111,7 +111,7 @@ class QrCode {
     let row: Array<boolean> = [];
     for (let i = 0; i < this.size; i++) row.push(false);
     for (let i = 0; i < this.size; i++) {
-      this.modules.push(row.slice()); // Initially all light
+      this.modules.push(row.slice());
       this.isFunction.push(row.slice());
     }
 

@@ -1,27 +1,45 @@
-# NgQrcodeSvgApp
+# @larscom/ng-qrcode-svg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+[![npm-version](https://img.shields.io/npm/v/@larscom/ng-qrcode-svg.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-qrcode-svg)
+![npm](https://img.shields.io/npm/dw/@larscom/ng-qrcode-svg)
+[![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/master/LICENSE)
+[![master](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml)
+[![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
 
-## Development server
+Simple, yet powerful QR code generator (SVG only) for Angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Notice
 
-## Code scaffolding
+This library is in its early age, interface definitions might change in future releases.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+```bash
+npm i --save @larscom/ng-qrcode-svg
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+1. Import module: `NgQrcodeSvgModule`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgQrcodeSvgModule } from '@larscom/ng-qrcode-svg';
+import { AppComponent } from './app';
 
-## Running end-to-end tests
+@NgModule({
+  imports: [
+    BrowserModule,
+    NgQrcodeSvgModule // <-- import NgQrcodeSvgModule
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Use the `ng-qrcode-svg` component which will render an SVG
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```html
+<ng-qrcode-svg value="hello world!"></ng-qrcode-svg>
+```

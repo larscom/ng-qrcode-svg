@@ -1,4 +1,3 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -12,9 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "ng-qrcode-svg": [
-        "dist/ng-qrcode-svg"
-      ]
+      "@larscom/ng-qrcode-svg": ["projects/ng-qrcode-svg/src/public-api"]
     },
     "declaration": false,
     "downlevelIteration": true,
@@ -23,10 +20,7 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
