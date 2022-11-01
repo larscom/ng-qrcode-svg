@@ -9,7 +9,7 @@
     "test": "exit 0",
     "test:ci": "exit 0",
     "copy:readme": "cpx README.md dist/ng-qrcode-svg",
-    "preversion": "mkdir -p projects/ng-qrcode-svg/.git"
+    "postinstall": "mkdir -p projects/ng-qrcode-svg/.git"
   },
   "private": true,
   "dependencies": {
