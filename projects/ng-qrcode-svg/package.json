@@ -1,0 +1,31 @@
+{
+  "name": "@larscom/ng-qrcode-svg",
+  "version": "0.0.1",
+  "description": "Simple, yet powerful QR code generator (SVG only) for Angular",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larscom/ng-qrcode-svg.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "qr",
+    "qr-code",
+    "angular",
+    "svg"
+  ],
+  "author": "Lars Kniep",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larscom/ng-qrcode-svg/issues"
+  },
+  "homepage": "https://github.com/larscom/ng-qrcode-svg#readme",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
