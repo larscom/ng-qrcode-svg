@@ -107,7 +107,7 @@
       "projectType": "library",
       "root": "projects/ng-qrcode-svg",
       "sourceRoot": "projects/ng-qrcode-svg/src",
-      "prefix": "lib",
+      "prefix": "qrcode",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

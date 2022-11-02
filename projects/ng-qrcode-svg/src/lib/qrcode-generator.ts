@@ -20,7 +20,6 @@
  *   out of or in connection with the Software or the use or other dealings in the
  *   Software.
  */
-'use strict';
 
 type bit = number;
 type byte = number;
@@ -637,6 +636,11 @@ class Ecc {
   public static readonly MEDIUM = new Ecc(1, 0); // The QR Code can tolerate about 15% erroneous codewords
   public static readonly QUARTILE = new Ecc(2, 3); // The QR Code can tolerate about 25% erroneous codewords
   public static readonly HIGH = new Ecc(3, 2); // The QR Code can tolerate about 30% erroneous codewords
+
+  public static readonly low = this.LOW
+  public static readonly medium = this.MEDIUM
+  public static readonly quartile = this.QUARTILE
+  public static readonly high = this.HIGH
 
   private constructor(public readonly ordinal: int, public readonly formatBits: int) {}
 }

@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgQrcodeSvgComponent } from './ng-qrcode-svg.component';
+import { QrcodeSvgComponent } from './qrcode-svg.component';
 
-describe('NgQrcodeSvgComponent', () => {
-  let component: NgQrcodeSvgComponent;
-  let fixture: ComponentFixture<NgQrcodeSvgComponent>;
+describe('QrcodeSvgComponent', () => {
+  let component: QrcodeSvgComponent;
+  let fixture: ComponentFixture<QrcodeSvgComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NgQrcodeSvgComponent]
+      declarations: [QrcodeSvgComponent]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NgQrcodeSvgComponent);
+    fixture = TestBed.createComponent(QrcodeSvgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

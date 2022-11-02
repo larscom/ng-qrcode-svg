@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Ecc, QrCode } from './qrcode-generator';
 
 const VALID_COLOR_REGEX = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/;
 
 @Component({
-  selector: 'ng-qrcode-svg',
+  selector: 'qrcode-svg',
   template: `
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,13 +20,12 @@ const VALID_COLOR_REGEX = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/;
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NgQrcodeSvgComponent implements OnInit {
+export class QrcodeSvgComponent implements OnChanges {
   @Input() value!: string;
-
-  @Input() ecc: 'LOW' | 'MEDIUM' | 'QUARTILE' | 'HIGH' = 'MEDIUM';
+  @Input() ecc: 'low' | 'medium' | 'quartile' | 'high' = 'medium';
   @Input() borderSize = 2;
-  @Input() size = '200px';
 
+  @Input() size = '250px';
   @Input() backgroundColor = '#FFFFFF';
   @Input() foregroundColor = '#000000';
 
@@ -34,12 +33,14 @@ export class NgQrcodeSvgComponent implements OnInit {
   viewBox!: string;
   d!: string;
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
     this.validateInputs();
 
+    if (this.skipUpdate(changes)) return;
+
     this.qr = QrCode.encodeText(this.value, Ecc[this.ecc]);
-    const size = this.qr.size + this.borderSize * 2;
-    this.viewBox = `0 0 ${size} ${size}`;
+    const s = this.qr.size + this.borderSize * 2;
+    this.viewBox = `0 0 ${s} ${s}`;
     this.d = this.createD(this.borderSize);
   }
 
@@ -47,10 +48,18 @@ export class NgQrcodeSvgComponent implements OnInit {
     if (!this.value) throw Error('[@larscom/ng-qrcode-svg] You must provide a value!');
 
     if (!VALID_COLOR_REGEX.test(this.backgroundColor))
-      throw Error('[@larscom/ng-qrcode-svg] You must provide a valid backgroundColor (RGBA HEX color: eg: #FFFFFF)');
+      throw Error('[@larscom/ng-qrcode-svg] You must provide a valid backgroundColor (HEX RGB) eg: #FFFFFF');
 
     if (!VALID_COLOR_REGEX.test(this.foregroundColor))
-      throw Error('[@larscom/ng-qrcode-svg] You must provide a valid foregroundColor (RGBA HEX color: eg: #000000)');
+      throw Error('[@larscom/ng-qrcode-svg] You must provide a valid foregroundColor (HEX RGB) eg: #000000');
+  }
+
+  private skipUpdate({ backgroundColor, foregroundColor, size }: SimpleChanges): boolean {
+    const bgColorChanged = backgroundColor?.currentValue && !backgroundColor?.firstChange;
+    const fgColorChanged = foregroundColor?.currentValue && !foregroundColor.firstChange;
+    const sizeChanged = size?.currentValue && !size.firstChange;
+
+    return bgColorChanged || fgColorChanged || sizeChanged;
   }
 
   private createD(borderSize: number): string {

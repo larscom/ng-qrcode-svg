@@ -1,2 +1,47 @@
-<h1>@larscom/ng-qrcode-svg</h1>
-<ng-qrcode-svg value="@larscom/ng-qrcode-svg"></ng-qrcode-svg>
+<div class="container">
+  <h1>@larscom/ng-qrcode-svg</h1>
+  <qrcode-svg [value]="(value$ | async)!"
+    [size]="(size$ | async)!"
+    [foregroundColor]="(foregroundColor$ | async)!"
+    [backgroundColor]="(backgroundColor$ | async)!">
+  </qrcode-svg>
+
+  <div class="input">
+    <form [formGroup]="formGroup">
+      <div style="display:flex; flex-direction: column;">
+
+        <div style="display:flex; gap:10px; align-items: center;">
+          <label for="value">Value:</label>
+          <input id="value"
+            formControlName="value" />
+        </div>
+
+        <div style="display:flex; gap:10px; align-items: center;">
+          <label for="size">Size:</label>
+          <input id="size"
+            type="range"
+            min="50"
+            max="400"
+            value="200"
+            formControlName="size">
+        </div>
+
+        <div style="display:flex; gap:10px; align-items: center;">
+          <label for="foregroundColor">Foreground:</label>
+          <input type="color"
+            id="foregroundColor"
+            formControlName="foregroundColor">
+        </div>
+
+        <div style="display:flex; gap:10px; align-items: center;">
+          <label for="backgroundColor">Background:</label>
+          <input type="color"
+            id="backgroundColor"
+            formControlName="backgroundColor">
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+</div>
