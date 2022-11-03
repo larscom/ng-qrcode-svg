@@ -11,7 +11,7 @@
 
 ![Demo GIF](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
 
-### ✨ [Demo](https://ng-qrcode-svg.web.app)
+### ✨ [Live Demo](https://ng-qrcode-svg.web.app)
 
 ## Installation
 
