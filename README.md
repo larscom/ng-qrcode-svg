@@ -4,8 +4,8 @@
 ![npm](https://img.shields.io/npm/dw/@larscom/ng-qrcode-svg)
 [![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/master/LICENSE)
 [![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
-[![npm-pipeline](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml)
-[![firebase-pipeline](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase.yml)
+[![npm-publish](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml)
+[![firebase-hosting](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml)
 
 > Simple and powerful QR code generator (SVG only) for Angular.
 
