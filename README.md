@@ -8,10 +8,6 @@
 
 Simple, yet powerful QR code generator (SVG only) for Angular.
 
-## Notice
-
-This library is in its early age, interface definitions might change in future releases.
-
 ## Installation
 
 ```bash
@@ -20,26 +16,22 @@ npm i --save @larscom/ng-qrcode-svg
 
 ## Usage
 
-1. Import module: `NgQrcodeSvgModule`
+1. Import module: `QrcodeSvgModule`
 
 ```ts
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgQrcodeSvgModule } from '@larscom/ng-qrcode-svg';
-import { AppComponent } from './app';
+import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg';
 
 @NgModule({
   imports: [
-    BrowserModule,
-    NgQrcodeSvgModule // <-- import NgQrcodeSvgModule
-  ],
-  bootstrap: [AppComponent]
+    QrcodeSvgModule // <-- import QrcodeSvgModule
+  ]
 })
-export class AppModule {}
+export class MyModule {}
 ```
 
-2. Use the `ng-qrcode-svg` component which will render an SVG
+2. Use the `qrcode-svg` component which will render a QR code in SVG format
 
 ```html
-<ng-qrcode-svg value="hello world!"></ng-qrcode-svg>
+<qrcode-svg value="hello world!"></qrcode-svg>
 ```
