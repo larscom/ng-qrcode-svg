@@ -11,9 +11,17 @@
   },
   "keywords": [
     "qr",
+    "qrcode",
     "qr-code",
     "angular",
-    "svg"
+    "svg",
+    "render",
+    "image",
+    "reactive",
+    "simple",
+    "easy",
+    "print",
+    "img"
   ],
   "author": "Lars Kniep",
   "license": "MIT",

@@ -6,17 +6,19 @@
 [![master](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml)
 [![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
 
-Simple, yet powerful QR code generator (SVG only) for Angular.
+> Simple, yet powerful QR code generator (SVG only) for Angular.
+
+![Demo](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
 
 ## Installation
 
 ```bash
-npm i --save @larscom/ng-qrcode-svg
+npm install @larscom/ng-qrcode-svg
 ```
 
 ## Usage
 
-1. Import module: `QrcodeSvgModule`
+1. Import module `QrcodeSvgModule`
 
 ```ts
 import { NgModule } from '@angular/core';
@@ -35,3 +37,5 @@ export class MyModule {}
 ```html
 <qrcode-svg value="hello world!"></qrcode-svg>
 ```
+
+## API
