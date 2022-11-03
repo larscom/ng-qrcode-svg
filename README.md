@@ -43,13 +43,13 @@ export class MyModule {}
 
 ## Component Properties
 
-| Name                                                     | Description                                               | Default   |
-| -------------------------------------------------------- | --------------------------------------------------------- | --------- |
-| @Input() value: string;                                  | The value to encode (turns into QR code)                  | undefined |
-| @Input() ecc: 'low' \| 'medium' \| 'quartile' \| 'high'; | Error correction level                                    | medium    |
-| @Input() borderSize: number;                             | The padding between the edge and the QR code (quiet zone) | 2         |
-| @Input() size: string \| number;                         | The size of the QR code SVG (px,em,rem)                   | 250       |
-| @Input() backgroundColor: string;                        | The 'path' color (background)                             | #FFFFFF   |
-| @Input() foregroundColor: string;                        | The 'rect' color (foreground)                             | #000000   |
-| @Input() alt: string \| undefined;                       | HTML alt attribute                                        | undefined |
-| @Input() ariaLabel: string \| undefined;                 | HTML aria-label attribute                                 | undefined |
+| Name                                                    | Description                                               | Default   |
+| ------------------------------------------------------- | --------------------------------------------------------- | --------- |
+| @Input() value: string                                  | The value to encode (turns into QR code)                  | undefined |
+| @Input() ecc: 'low' \| 'medium' \| 'quartile' \| 'high' | Error correction level                                    | medium    |
+| @Input() borderSize: number                             | The padding between the edge and the QR code (quiet zone) | 2         |
+| @Input() size: string \| number                         | The size of the QR code SVG (px,em,rem)                   | 250       |
+| @Input() backgroundColor: string                        | The 'path' color (background)                             | #FFFFFF   |
+| @Input() foregroundColor: string                        | The 'rect' color (foreground)                             | #000000   |
+| @Input() alt: string \| undefined                       | HTML alt attribute                                        | undefined |
+| @Input() ariaLabel: string \| undefined                 | HTML aria-label attribute                                 | undefined |
