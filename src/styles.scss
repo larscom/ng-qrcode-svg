@@ -2,3 +2,28 @@ body {
   background-color: #212121;
   color: #fff;
 }
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+.gap-25 {
+  gap: 25px;
+}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { map, startWith, tap } from 'rxjs';
+import { map, shareReplay, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,20 +11,24 @@ export class AppComponent {
   initialValue = {
     value: 'Hello World!',
     size: '250',
+    borderSize: 2,
     backgroundColor: '#FFFFFF',
     foregroundColor: '#000000'
   };
 
   readonly formGroup = this.formBuilder.group(this.initialValue);
-
   readonly formGroupValue$ = this.formGroup.valueChanges.pipe(startWith(this.initialValue));
 
-  readonly value$ = this.formGroupValue$.pipe(
-    map(({ value }) => (value!?.length > 0 ? value : this.initialValue.value)),
-    tap((value) => this.formGroup.get('value')?.reset(value, { emitEvent: false }))
+  readonly value$ = this.formGroupValue$.pipe(map(({ value }) => value));
+  readonly size$ = this.formGroupValue$.pipe(
+    map(({ size }) => `${size}px`),
+    shareReplay()
   );
-  readonly size$ = this.formGroupValue$.pipe(map(({ size }) => size));
-  readonly backgroundColor$ = this.formGroupValue$.pipe(map(({ backgroundColor }) => backgroundColor));
+  readonly borderSize$ = this.formGroupValue$.pipe(map(({ borderSize }) => borderSize));
+  readonly backgroundColor$ = this.formGroupValue$.pipe(
+    map(({ backgroundColor }) => backgroundColor),
+    shareReplay()
+  );
   readonly foregroundColor$ = this.formGroupValue$.pipe(map(({ foregroundColor }) => foregroundColor));
 
   constructor(private readonly formBuilder: FormBuilder) {}

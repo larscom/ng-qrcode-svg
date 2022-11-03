@@ -1,47 +1,64 @@
-<div class="container">
-  <h1>@larscom/ng-qrcode-svg</h1>
-  <qrcode-svg [value]="(value$ | async)!"
-    [size]="(size$ | async)!"
-    [foregroundColor]="(foregroundColor$ | async)!"
-    [backgroundColor]="(backgroundColor$ | async)!">
-  </qrcode-svg>
+<div class="flex flex-col align-center justify-between container">
+  <div class="flex flex-col gap-25 align-center">
+    <h1>@larscom/ng-qrcode-svg</h1>
+    <ng-container *ngIf="value$ | async as value; else placeHolder">
+      <qrcode-svg [value]="value"
+        [size]="(size$ | async)!"
+        [borderSize]="(borderSize$ | async)!"
+        [foregroundColor]="(foregroundColor$ | async)!"
+        [backgroundColor]="(backgroundColor$ | async)!">
+      </qrcode-svg>
+    </ng-container>
+    <ng-template #placeHolder>
+      <div [style.backgroundColor]="(backgroundColor$ | async)!"
+        [style.width]="(size$ | async)!"
+        [style.height]="(size$ | async)!">
+      </div>
+    </ng-template>
+  </div>
 
-  <div class="input">
-    <form [formGroup]="formGroup">
-      <div style="display:flex; flex-direction: column;">
+  <form [formGroup]="formGroup">
+    <div class="flex gap-10 flex-col">
 
-        <div style="display:flex; gap:10px; align-items: center;">
-          <label for="value">Value:</label>
-          <input id="value"
-            formControlName="value" />
-        </div>
-
-        <div style="display:flex; gap:10px; align-items: center;">
-          <label for="size">Size:</label>
-          <input id="size"
-            type="range"
-            min="50"
-            max="400"
-            value="200"
-            formControlName="size">
-        </div>
-
-        <div style="display:flex; gap:10px; align-items: center;">
-          <label for="foregroundColor">Foreground:</label>
-          <input type="color"
-            id="foregroundColor"
-            formControlName="foregroundColor">
-        </div>
-
-        <div style="display:flex; gap:10px; align-items: center;">
-          <label for="backgroundColor">Background:</label>
-          <input type="color"
-            id="backgroundColor"
-            formControlName="backgroundColor">
-        </div>
-
+      <div class="flex gap-25 align-center">
+        <label for="value">Value</label>
+        <input id="value"
+          formControlName="value" />
       </div>
 
-    </form>
-  </div>
+      <div class="flex gap-25 align-center">
+        <label for="size">Size</label>
+        <input id="size"
+          type="range"
+          min="50"
+          max="400"
+          formControlName="size">
+      </div>
+
+      <div class="flex gap-25 align-center">
+        <label for="borderSize">Border</label>
+        <input id="borderSize"
+          type="range"
+          min="1"
+          max="4"
+          formControlName="borderSize">
+      </div>
+
+      <div class="flex gap-25 align-center">
+        <label for="foregroundColor">Foreground</label>
+        <input type="color"
+          id="foregroundColor"
+          formControlName="foregroundColor">
+      </div>
+
+      <div class="flex gap-25 align-center">
+        <label for="backgroundColor">Background</label>
+        <input type="color"
+          id="backgroundColor"
+          formControlName="backgroundColor">
+      </div>
+
+    </div>
+  </form>
+
 </div>
