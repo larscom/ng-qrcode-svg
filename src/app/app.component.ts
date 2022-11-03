@@ -10,7 +10,7 @@ import { map, shareReplay, startWith } from 'rxjs';
 export class AppComponent {
   initialValue = {
     value: 'Hello World!',
-    size: '250',
+    size: 250,
     borderSize: 2,
     backgroundColor: '#FFFFFF',
     foregroundColor: '#000000'
@@ -21,7 +21,7 @@ export class AppComponent {
 
   readonly value$ = this.formGroupValue$.pipe(map(({ value }) => value));
   readonly size$ = this.formGroupValue$.pipe(
-    map(({ size }) => `${size}px`),
+    map(({ size }) => size),
     shareReplay()
   );
   readonly borderSize$ = this.formGroupValue$.pipe(map(({ borderSize }) => borderSize));

@@ -3,12 +3,15 @@
 [![npm-version](https://img.shields.io/npm/v/@larscom/ng-qrcode-svg.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-qrcode-svg)
 ![npm](https://img.shields.io/npm/dw/@larscom/ng-qrcode-svg)
 [![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/master/LICENSE)
-[![master](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/master.yml)
 [![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
+[![npm-pipeline](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/npm-merge.yml)
+[![firebase-pipeline](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml)
 
-> Simple, yet powerful QR code generator (SVG only) for Angular.
+> Simple and powerful QR code generator (SVG only) for Angular.
 
-![Demo](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
+![Demo GIF](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
+
+### ✨ [Demo](https://ng-qrcode-svg.web.app)
 
 ## Installation
 
@@ -26,7 +29,7 @@ import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg';
 
 @NgModule({
   imports: [
-    QrcodeSvgModule // <-- import QrcodeSvgModule
+    QrcodeSvgModule // <-- import
   ]
 })
 export class MyModule {}
@@ -38,4 +41,15 @@ export class MyModule {}
 <qrcode-svg value="hello world!"></qrcode-svg>
 ```
 
-## API
+## Component Properties
+
+| Name                                                     | Description                                               | Default   |
+| -------------------------------------------------------- | --------------------------------------------------------- | --------- |
+| @Input() value: string;                                  | The value to encode (turns into QR code)                  | undefined |
+| @Input() ecc: 'low' \| 'medium' \| 'quartile' \| 'high'; | Error correction level                                    | medium    |
+| @Input() borderSize: number;                             | The padding between the edge and the QR code (quiet zone) | 2         |
+| @Input() size: string \| number;                         | The size of the QR code SVG (px,em,rem)                   | 250       |
+| @Input() backgroundColor: string;                        | The 'path' color (background)                             | #FFFFFF   |
+| @Input() foregroundColor: string;                        | The 'rect' color (foreground)                             | #000000   |
+| @Input() alt: string \| undefined;                       | HTML alt attribute                                        | undefined |
+| @Input() ariaLabel: string \| undefined;                 | HTML aria-label attribute                                 | undefined |

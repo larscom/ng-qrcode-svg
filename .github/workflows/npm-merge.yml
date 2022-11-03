@@ -2,8 +2,6 @@ name: 'master'
 
 on:
   push:
-    branches:
-      - 'master'
     tags:
       - 'v*.*.*'
 
@@ -20,14 +18,11 @@ jobs:
       - name: Install packages
         run: npm ci --legacy-peer-deps --ignore-scripts
       - name: Unit test
-        run: |
-          npm run test:ci
-      - name: Build lib & app
-        run: |
-          npm run build
-          npm run build:lib
+        run: npm run test:ci
+      - name: Build library
+        run: npm run build:lib
       - if: startsWith(github.ref, 'refs/tags/v')
-        name: Upload lib
+        name: Upload library
         uses: actions/upload-artifact@v2
         with:
           name: ng-qrcode-svg
@@ -46,12 +41,12 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - name: Download lib
+      - name: Download library
         uses: actions/download-artifact@v2
         with:
           name: ng-qrcode-svg
           path: /tmp/ng-qrcode-svg
-      - name: Publish lib
+      - name: Publish library
         run: |
           cd /tmp/ng-qrcode-svg
           ls -ltra .

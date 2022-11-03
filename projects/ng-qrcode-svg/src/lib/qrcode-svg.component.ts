@@ -10,6 +10,8 @@ const VALID_COLOR_REGEX = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/;
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       stroke="none"
+      [attr.alt]="alt"
+      [attr.aria-label]="ariaLabel"
       [attr.width]="size"
       [attr.height]="size"
       [attr.viewBox]="viewBox"
@@ -25,9 +27,12 @@ export class QrcodeSvgComponent implements OnChanges {
   @Input() ecc: 'low' | 'medium' | 'quartile' | 'high' = 'medium';
   @Input() borderSize = 2;
 
-  @Input() size = '250px';
+  @Input() size: string | number = 250;
   @Input() backgroundColor = '#FFFFFF';
   @Input() foregroundColor = '#000000';
+
+  @Input() alt: string | undefined;
+  @Input() ariaLabel: string | undefined;
 
   qr!: QrCode;
   viewBox!: string;
