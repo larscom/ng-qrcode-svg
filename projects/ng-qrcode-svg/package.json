@@ -1,6 +1,6 @@
 {
   "name": "@larscom/ng-qrcode-svg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple and powerful QR code generator (SVG only) for Angular",
   "repository": {
     "type": "git",
