@@ -3,6 +3,8 @@
 [![npm-version](https://img.shields.io/npm/v/@larscom/ng-qrcode-svg.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-qrcode-svg)
 ![npm](https://img.shields.io/npm/dw/@larscom/ng-qrcode-svg)
 [![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/master/LICENSE)
+[![codecov](https://codecov.io/github/larscom/ng-qrcode-svg/branch/master/graph/badge.svg?token=W2SGBAYLM1)](https://codecov.io/github/larscom/ng-qrcode-svg)
+
 [![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
 [![firebase-hosting](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml)
 

@@ -6,9 +6,11 @@ const karmaConfig = require('../../karma.conf');
 module.exports = function (config) {
   const conf = Object.assign({}, karmaConfig(config), {
     coverageReporter: {
-      dir: require('path').join(__dirname, '../../coverage/ng-qrcode-svg'),
+      dir: require('path').join(__dirname, '../../coverage'),
       subdir: '.',
-      reporters: [{ type: 'lcovonly' }, { type: 'json' }]
+      reporters: [
+        { type: 'lcovonly' }, { type: 'json' }
+      ]
     }
   });
   config.set(conf);

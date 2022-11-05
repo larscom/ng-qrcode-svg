@@ -34,7 +34,8 @@ export class QrcodeSvgComponent implements OnChanges {
   @Input() alt: string | undefined;
   @Input() ariaLabel: string | undefined;
 
-  qr!: QrCode;
+  private qr!: QrCode;
+
   viewBox!: string;
   d!: string;
 
