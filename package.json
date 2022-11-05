@@ -6,8 +6,8 @@
     "build": "ng build --configuration production",
     "build:lib": "ng build ng-qrcode-svg && npm run copy:readme",
     "watch": "ng build --watch --configuration development",
-    "test": "exit 0",
-    "test:ci": "exit 0",
+    "test": "ng test ng-qrcode-svg",
+    "test:ci": "ng test ng-qrcode-svg --watch=false --browsers ChromeHeadless --code-coverage",
     "copy:readme": "cpx README.md dist/ng-qrcode-svg",
     "postinstall": "mkdir -p projects/ng-qrcode-svg/.git"
   },

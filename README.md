@@ -6,7 +6,7 @@
 [![CodeQL](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/codeql-analysis.yml)
 [![firebase-hosting](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml/badge.svg?branch=master)](https://github.com/larscom/ng-qrcode-svg/actions/workflows/firebase-hosting-merge.yml)
 
-> Simple and powerful QR code generator (SVG only) for Angular.
+> Simple QR code generator (SVG only) for Angular
 
 <picture>
   <img alt="showcase" src="https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif">
@@ -46,10 +46,10 @@ export class MyModule {}
 
 | Name                                                    | Description                                               | Default   |
 | ------------------------------------------------------- | --------------------------------------------------------- | --------- |
-| @Input() value: string                                  | The value to encode (turns into QR code)                  | undefined |
-| @Input() ecc: 'low' \| 'medium' \| 'quartile' \| 'high' | Error correction level                                    | medium    |
+| @Input() value: string                                  | The value which need to be encoded                        | undefined |
+| @Input() ecl: 'low' \| 'medium' \| 'quartile' \| 'high' | Error correction level                                    | medium    |
 | @Input() borderSize: number                             | The padding between the edge and the QR code (quiet zone) | 2         |
-| @Input() size: string \| number                         | The size of the QR code SVG (px,em,rem)                   | 250       |
+| @Input() size: string \| number                         | The size of the QR code SVG (css format)                  | 250px     |
 | @Input() backgroundColor: string                        | The 'path' color (background)                             | #FFFFFF   |
 | @Input() foregroundColor: string                        | The 'rect' color (foreground)                             | #000000   |
 | @Input() alt: string \| undefined                       | HTML alt attribute                                        | undefined |

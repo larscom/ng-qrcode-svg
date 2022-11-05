@@ -24,7 +24,7 @@ const VALID_COLOR_REGEX = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/;
 })
 export class QrcodeSvgComponent implements OnChanges {
   @Input() value!: string;
-  @Input() ecc: 'low' | 'medium' | 'quartile' | 'high' = 'medium';
+  @Input() ecl: 'low' | 'medium' | 'quartile' | 'high' = 'medium';
   @Input() borderSize = 2;
 
   @Input() size: string | number = 250;
@@ -43,7 +43,7 @@ export class QrcodeSvgComponent implements OnChanges {
 
     if (this.skipUpdate(changes)) return;
 
-    this.qr = QrCode.encodeText(this.value, Ecc[this.ecc]);
+    this.qr = QrCode.encodeText(this.value, Ecc[this.ecl]);
     const s = this.qr.size + this.borderSize * 2;
     this.viewBox = `0 0 ${s} ${s}`;
     this.d = this.createD(this.borderSize);

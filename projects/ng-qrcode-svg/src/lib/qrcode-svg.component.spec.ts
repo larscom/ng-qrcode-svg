@@ -16,7 +16,29 @@ describe('QrcodeSvgComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should throw error if value is missing', () => {
+    component.value = '';
+
+    expect(function () {
+      component.ngOnChanges({});
+    }).toThrow(Error('[@larscom/ng-qrcode-svg] You must provide a value!'));
+  });
+
+  it(`should throw error if foregroundColor doesn't match hex pattern`, () => {
+    component.value = 'value';
+    component.foregroundColor = 'invalid';
+
+    expect(function () {
+      component.ngOnChanges({});
+    }).toThrow(Error('[@larscom/ng-qrcode-svg] You must provide a valid foregroundColor (HEX RGB) eg: #000000'));
+  });
+
+  it(`should throw error if backgroundColor doesn't match hex pattern`, () => {
+    component.value = 'value';
+    component.backgroundColor = 'invalid';
+
+    expect(function () {
+      component.ngOnChanges({});
+    }).toThrow(Error('[@larscom/ng-qrcode-svg] You must provide a valid backgroundColor (HEX RGB) eg: #FFFFFF'));
   });
 });

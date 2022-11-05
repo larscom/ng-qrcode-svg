@@ -10,7 +10,7 @@ import { map, shareReplay, startWith } from 'rxjs';
 export class AppComponent {
   initialValue = {
     value: 'Hello World!',
-    size: 250,
+    size: 400,
     borderSize: 2,
     backgroundColor: '#FFFFFF',
     foregroundColor: '#000000'
