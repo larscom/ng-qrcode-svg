@@ -10,9 +10,7 @@
 
 > Simple QR code generator (SVG only) for Angular
 
-<picture>
-  <img alt="showcase" src="https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif">
-</picture>
+![Demo GIF](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
 
 > ### ✨ [Live Demo](https://ng-qrcode-svg.web.app)
 
