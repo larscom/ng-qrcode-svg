@@ -30,7 +30,7 @@ import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg';
 
 @NgModule({
   imports: [
-    QrcodeSvgModule // <-- import
+    QrcodeSvgModule // import QrcodeSvgModule
   ]
 })
 export class MyModule {}
