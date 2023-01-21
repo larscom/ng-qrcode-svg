@@ -104,10 +104,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-qrcode-svg/src/test.ts",
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/ng-qrcode-svg/tsconfig.spec.json",
             "karmaConfig": "projects/ng-qrcode-svg/karma.conf.js",
-            "codeCoverageExclude": ["projects/ng-qrcode-svg/src/lib/qrcode-generator.ts"]
+            "codeCoverageExclude": ["projects/ng-qrcode-svg/src/lib/qrcode-generator.ts"],
+            "inlineStyleLanguage": "scss"
           }
         }
       }
