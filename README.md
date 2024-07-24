@@ -2,12 +2,11 @@
 
 [![npm-version](https://img.shields.io/npm/v/@larscom/ng-qrcode-svg.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-qrcode-svg)
 ![npm](https://img.shields.io/npm/dw/@larscom/ng-qrcode-svg)
-[![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/master/LICENSE)
-[![codecov](https://codecov.io/github/larscom/ng-qrcode-svg/branch/master/graph/badge.svg?token=W2SGBAYLM1)](https://codecov.io/github/larscom/ng-qrcode-svg)
+[![license](https://img.shields.io/npm/l/@larscom/ng-qrcode-svg.svg)](https://github.com/larscom/ng-qrcode-svg/blob/main/LICENSE)
 
 > Simple QR code generator (SVG only) for Angular
 
-![Demo GIF](https://github.com/larscom/ng-qrcode-svg/blob/master/.github/img/demo.gif)
+![Demo GIF](https://github.com/larscom/ng-qrcode-svg/blob/main/.github/img/demo.gif)
 
 ## Installation
 
@@ -20,8 +19,8 @@ npm install @larscom/ng-qrcode-svg
 1. Import module `QrcodeSvgModule`
 
 ```ts
-import { NgModule } from '@angular/core';
-import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg';
+import { NgModule } from '@angular/core'
+import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg'
 
 @NgModule({
   imports: [
