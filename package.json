@@ -32,6 +32,6 @@
     "jest-preset-angular": "14.3.3",
     "ng-packagr": "18.2.1",
     "shallow-render": "18.0.0",
-    "typescript": "5.6.3"
+    "typescript": "5.7.2"
   }
 }
