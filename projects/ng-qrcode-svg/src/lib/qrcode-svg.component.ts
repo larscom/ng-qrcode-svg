@@ -5,6 +5,7 @@ const VALID_COLOR_REGEX = /^#(?:[0-9a-fA-F]{3,4}){1,2}$/
 
 @Component({
   selector: 'qrcode-svg',
+  standalone: true,
   template: `
     <svg
       xmlns="http://www.w3.org/2000/svg"

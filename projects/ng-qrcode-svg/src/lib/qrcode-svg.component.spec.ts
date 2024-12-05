@@ -4,14 +4,13 @@ import { By } from '@angular/platform-browser'
 import { Shallow } from 'shallow-render'
 
 import { QrcodeSvgComponent } from './qrcode-svg.component'
-import { QrcodeSvgModule } from './qrcode-svg.module'
 
 describe('QrcodeSvgComponent', () => {
   describe('Rendering', () => {
     let shallow: Shallow<QrcodeSvgComponent>
 
     beforeEach(() => {
-      shallow = new Shallow(QrcodeSvgComponent, QrcodeSvgModule)
+      shallow = new Shallow(QrcodeSvgComponent)
     })
 
     it('should fully render the QR code', async () => {
@@ -55,7 +54,7 @@ describe('QrcodeSvgComponent', () => {
 
     beforeEach(async () => {
       await TestBed.configureTestingModule({
-        declarations: [QrcodeSvgComponent]
+        imports: [QrcodeSvgComponent]
       }).compileComponents()
 
       fixture = TestBed.createComponent(QrcodeSvgComponent)

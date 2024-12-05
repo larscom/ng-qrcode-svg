@@ -16,16 +16,14 @@ npm install @larscom/ng-qrcode-svg
 
 ## Usage
 
-1. Import module `QrcodeSvgModule`
+1. Import component `QrcodeSvgComponent`
 
 ```ts
 import { NgModule } from '@angular/core'
-import { QrcodeSvgModule } from '@larscom/ng-qrcode-svg'
+import { QrcodeSvgComponent } from '@larscom/ng-qrcode-svg'
 
 @NgModule({
-  imports: [
-    QrcodeSvgModule // import QrcodeSvgModule
-  ]
+  imports: [QrcodeSvgComponent]
 })
 export class MyModule {}
 ```
