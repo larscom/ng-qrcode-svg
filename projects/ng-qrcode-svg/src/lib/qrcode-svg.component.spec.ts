@@ -1,48 +1,51 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { By } from '@angular/platform-browser'
-import { Shallow } from 'shallow-render'
 import { QrcodeSvgComponent } from './qrcode-svg.component'
 
 describe('QrcodeSvgComponent', () => {
   describe('Rendering', () => {
-    let shallow: Shallow<QrcodeSvgComponent>
+    let element: HTMLElement
 
-    beforeEach(() => {
-      shallow = new Shallow(QrcodeSvgComponent)
+    beforeEach(async () => {
+      await TestBed.configureTestingModule({
+        imports: [QrcodeSvgComponent]
+      }).compileComponents()
+
+      const fixture = TestBed.createComponent(QrcodeSvgComponent)
+      const component = fixture.componentRef
+
+      component.setInput('value', 'test')
+      component.setInput('ecl', 'high')
+      component.setInput('borderSize', 4)
+      component.setInput('size', 400)
+      component.setInput('backgroundColor', '#C0C0C0')
+      component.setInput('foregroundColor', '#808080')
+      component.setInput('alt', 'svg title')
+      component.setInput('ariaLabel', 'svg')
+
+      fixture.detectChanges()
+      element = fixture.nativeElement as HTMLElement
     })
 
-    it('should fully render the QR code', async () => {
-      const element = `
-      <qrcode-svg
-        value="test"
-        ecl="high"
-        borderSize="4"
-        size="400"
-        backgroundColor="#C0C0C0"
-        foregroundColor="#808080"
-        alt="svg title"
-        ariaLabel="svg"
-       ></qrcode-svg>
-       `
-      const { find } = await shallow.render(element)
+    it('should fully render the QR code', () => {
+      const svg = element.querySelector('svg')!
 
-      const svg = find('svg')
+      expect(svg.getAttribute('xmlns')).toBe('http://www.w3.org/2000/svg')
+      expect(svg.getAttribute('version')).toBe('1.1')
+      expect(svg.getAttribute('stroke')).toBe('none')
+      expect(svg.getAttribute('alt')).toBe('svg title')
+      expect(svg.getAttribute('aria-label')).toBe('svg')
+      expect(svg.getAttribute('width')).toBe('400')
+      expect(svg.getAttribute('height')).toBe('400')
+      expect(svg.getAttribute('viewBox')).toBe('0 0 29 29')
 
-      expect(svg.nativeElement.getAttribute('xmlns')).toEqual('http://www.w3.org/2000/svg')
-      expect(svg.nativeElement.getAttribute('version')).toEqual('1.1')
-      expect(svg.nativeElement.getAttribute('stroke')).toEqual('none')
-      expect(svg.nativeElement.getAttribute('alt')).toEqual('svg title')
-      expect(svg.nativeElement.getAttribute('aria-label')).toEqual('svg')
-      expect(svg.nativeElement.getAttribute('width')).toEqual('400')
-      expect(svg.nativeElement.getAttribute('height')).toEqual('400')
-      expect(svg.nativeElement.getAttribute('viewBox')).toEqual('0 0 29 29')
+      const rect = svg.querySelector('rect')!
+      expect(rect.getAttribute('width')).toBe('100%')
+      expect(rect.getAttribute('height')).toBe('100%')
+      expect(rect.getAttribute('fill')).toBe('#C0C0C0')
 
-      expect(svg.query(By.css('rect')).nativeElement.getAttribute('width')).toEqual('100%')
-      expect(svg.query(By.css('rect')).nativeElement.getAttribute('height')).toEqual('100%')
-      expect(svg.query(By.css('rect')).nativeElement.getAttribute('fill')).toEqual('#C0C0C0')
-
-      expect(svg.query(By.css('path')).nativeElement.getAttribute('d').startsWith('M04,04h1v1h-1z')).toBeTruthy()
-      expect(svg.query(By.css('path')).nativeElement.getAttribute('fill')).toEqual('#808080')
+      const path = svg.querySelector('path')!
+      expect(path.getAttribute('d')!.startsWith('M4,4h1v1h-1z')).toBe(true)
+      expect(path.getAttribute('fill')).toBe('#808080')
     })
   })
 

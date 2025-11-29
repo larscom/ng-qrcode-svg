@@ -1,19 +1,18 @@
 <div class="flex flex-col gap-25 align-center justify-between">
   <div class="flex flex-col gap-10 align-center">
     <h1>&#64;larscom/ng-qrcode-svg</h1>
-    <ng-container *ngIf="value$ | async as value; else placeHolder">
+    @if (value$ | async; as value) {
       <qrcode-svg [value]="value"
         [size]="size"
         [borderSize]="(borderSize$ | async)!"
         [foregroundColor]="(foregroundColor$ | async)!"
         [backgroundColor]="(backgroundColor$ | async)!">
       </qrcode-svg>
-    </ng-container>
-    <ng-template #placeHolder>
+    } @else {
       <div [style.backgroundColor]="(backgroundColor$ | async)!"
         [style.height]="size"
-        [style.width]="size"></div>
-    </ng-template>
+      [style.width]="size"></div>
+    }
   </div>
 
   <form [formGroup]="formGroup">
@@ -53,6 +52,6 @@
 
   <a href="https://github.com/larscom/ng-qrcode-svg"
     target="_blank"
-    rel="noopener noreferrer">Source Code &hearts; Github</a>
+  rel="noopener noreferrer">Source Code &hearts; Github</a>
 
 </div>
